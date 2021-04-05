@@ -1,9 +1,10 @@
 import React from "react";
+import MenuBookIcon from '@material-ui/icons/MenuBook';
 
 function Header() {
   return (
     <header>
-      <h1>Keeper</h1>
+      <h1><MenuBookIcon /> Keeper</h1>
     </header>
   );
 }
