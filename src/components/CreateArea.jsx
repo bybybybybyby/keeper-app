@@ -16,7 +16,7 @@ function CreateArea(props) {
     });
   }
 
-  function submitNote() {
+  function submitNote(event) {
     // Do not add if title and note are blank
     if (!(note.title === "" && note.content === "")) {
       props.onAdd(note);
@@ -27,7 +27,7 @@ function CreateArea(props) {
 
   return (
     <div>
-      <form>
+      <form className="create-note">
         <input onChange={handleChange} name="title" value={note.title} placeholder="Title" />
         <textarea onChange={handleChange} name="content" value={note.content} placeholder="Take a note..." rows="3" />
         <button onClick={submitNote}>Add</button>

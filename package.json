@@ -1,6 +1,6 @@
 {
-  "name": "keeper-app-part-1-starting",
-  "version": "1.0.0",
+  "name": "keeper-app-part",
+  "version": "1.0.4",
   "description": "",
   "keywords": [],
   "main": "src/index.js",
