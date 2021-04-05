@@ -9,11 +9,7 @@ function CreateArea(props) {
     content: ""
   });
 
-  const [expandedNote, setExpandedNote] = useState({
-    isHidden: "hidden",
-    numRows: 1,
-    zoom: false
-  })
+  const [isExpanded, setExpanded] = useState(false);
 
   function handleChange(event) {
     const { name, value } = event.target;
@@ -31,27 +27,19 @@ function CreateArea(props) {
       props.onAdd(note);
       setNote({title:"", content:""});
     }
-    setExpandedNote({
-      isHidden: "hidden",
-      numRows: 1,
-      zoom: false
-    })
+    setExpanded(false);
     event.preventDefault();  // Prevent page refresh
   }
 
   function expandNote() {
-    setExpandedNote({
-      isHidden: "",
-      numRows: 3,
-      zoom: true
-    })
+    setExpanded(true);
   }
 
   return (
     <div>
       <form className="create-note">
         <input 
-          type={expandedNote.isHidden}
+          type={isExpanded ? "" : "hidden"}
           onChange={handleChange} 
           name="title" 
           value={note.title} 
@@ -62,8 +50,8 @@ function CreateArea(props) {
           name="content" 
           value={note.content} 
           placeholder="Take a note..." 
-          rows={expandedNote.numRows} />
-        <Zoom in={expandedNote.zoom}>
+          rows={isExpanded ? 3 : 1} />
+        <Zoom in={isExpanded}>
           <Fab onClick={submitNote}><AddIcon /></Fab>
         </Zoom>
       </form>
