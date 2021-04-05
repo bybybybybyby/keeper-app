@@ -10,7 +10,7 @@ html {
 
 body {
   background: #eee;
-  background-image: url("https://www.transparenttextures.com/patterns/wall-4-light.png");
+  background-image: url("./images/bg-wall-4-light.png");
   padding: 0 16px;
 }
 
@@ -72,6 +72,7 @@ footer p {
   height: 36px;
   cursor: pointer;
   outline: none;
+  background-color: transparent;
 }
 
 form.create-note {
